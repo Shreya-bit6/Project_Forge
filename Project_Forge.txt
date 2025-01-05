@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Builder App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Model Builder</h1>
+    <p>Your one-stop solution for building any kind of project!</p>
+  </header>
+
+  <section id="account-creation">
+    <h2>Create Your Account</h2>
+    <form id="account-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+      
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter your age" required>
+      
+      <label for="interests">Interests:</label>
+      <input type="text" id="interests" placeholder="Eg: Robotics, AI, Environment" required>
+      
+      <label for="qualification">Qualification:</label>
+      <input type="text" id="qualification" placeholder="Eg: High School, Graduate" required>
+      
+      <label for="projects">Recent Projects:</label>
+      <textarea id="projects" placeholder="Describe recent projects"></textarea>
+      
+      <label for="reason">Why Are You Using This Website?</label>
+      <textarea id="reason" placeholder="State your reason"></textarea>
+      
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+  </section>
+
+  <section id="recommendations">
+    <h2>Recommendations for You</h2>
+    <div id="recommendation-list">
+      <!-- Recommendations will be displayed here dynamically -->
+    </div>
+  </section>
+
+  <section id="model-helper">
+    <h2>Search to Build Your Model</h2>
+    <form id="model-form">
+      <label for="model-name">Enter Model Name:</label>
+      <input type="text" id="model-name" placeholder="Eg: Working Solar System" required>
+      <button type="button" onclick="fetchModelDetails()">Get Details</button>
+    </form>
+    <div id="model-details">
+      <!-- Model details will appear here dynamically -->
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
