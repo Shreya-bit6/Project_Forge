@@ -59,3 +59,97 @@
   <script src="script.js"></script>
 </body>
 </html>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #4CAF50;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#recommendation-list, #model-details {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+// Simulating recommendation based on user data
+function submitForm() {
+  const name = document.getElementById('name').value;
+  const interests = document.getElementById('interests').value;
+  
+  const recommendations = [
+    Check out projects related to ${interests.split(',')[0].trim()}.,
+    "Explore beginner-friendly tutorials on electronics.",
+    "Learn about 3D printing for your models."
+  ];
+
+  let recommendationList = document.getElementById('recommendation-list');
+  recommendationList.innerHTML = <h3>Hi ${name}, here are your recommendations:</h3>;
+  recommendations.forEach(rec => {
+    recommendationList.innerHTML += <p>${rec}</p>;
+  });
+
+  alert("Account created successfully!");
+}
+
+// Simulating fetching model details
+function fetchModelDetails() {
+  const modelName = document.getElementById('model-name').value;
+  
+  const modelDetails = `
+    <h3>Details for: ${modelName}</h3>
+    <p><strong>Items Required:</strong> Cardboard, Solar Cells, Wires</p>
+    <p><strong>Estimated Cost:</strong> $25</p>
+    <p><strong>Steps:</strong> 1. Cut cardboard into circular parts... 2. Assemble solar cells...</p>
+    <p><strong>Dimensions:</strong> Diameter: 20cm, Height: 5cm</p>
+  `;
+
+  document.getElementById('model-details').innerHTML = modelDetails;
+}
